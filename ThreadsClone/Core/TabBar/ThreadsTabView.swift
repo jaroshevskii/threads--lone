@@ -45,10 +45,19 @@ struct ThreadsTabView: View {
         FeedView()
       }
 
-    case .explore: ExploreView()
-    case .upload: CreateThreadView()
-    case .activity: ActivityView()
-    case .profile: ProfileView()
+    case .explore:
+      NavigationView {
+        ExploreView()
+      }
+      
+    case .upload:
+      CreateThreadView()
+      
+    case .activity:
+      ActivityView()
+      
+    case .profile:
+      ProfileView()
     }
   }
 }
