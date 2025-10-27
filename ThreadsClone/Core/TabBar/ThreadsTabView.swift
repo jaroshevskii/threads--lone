@@ -40,7 +40,11 @@ struct ThreadsTabView: View {
   @ViewBuilder
   private func tabContent(for tab: Tab) -> some View {
     switch tab {
-    case .feed: FeedView()
+    case .feed:
+      NavigationView {
+        FeedView()
+      }
+
     case .explore: ExploreView()
     case .upload: CreateThreadView()
     case .activity: ActivityView()
