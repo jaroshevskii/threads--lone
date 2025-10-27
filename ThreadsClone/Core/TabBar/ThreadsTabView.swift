@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThreadsTabView: View {
   @State private var selectedTab: Tab = .feed
+  @State private var isPresentingUpload = false
 
   enum Tab: Int, CaseIterable {
     case feed, explore, upload, activity, profile
@@ -29,33 +30,36 @@ struct ThreadsTabView: View {
       ForEach(Tab.allCases, id: \.self) { tab in
         tabContent(for: tab)
           .tabItem {
-           Image(systemName: tab.symbolName)
+            Image(systemName: tab.symbolName)
           }
           .tag(tab)
       }
     }
     .tint(.black)
+    .onChange(of: selectedTab) { oldValue, newValue in
+      if newValue == .upload {
+        isPresentingUpload = true
+      }
+    }
+    .sheet(isPresented: $isPresentingUpload) {
+      CreateThreadView()
+        .onAppear {
+          selectedTab = .feed
+        }
+    }
   }
 
   @ViewBuilder
   private func tabContent(for tab: Tab) -> some View {
     switch tab {
     case .feed:
-      NavigationView {
-        FeedView()
-      }
-
+      NavigationView { FeedView() }
     case .explore:
-      NavigationView {
-        ExploreView()
-      }
-      
+      NavigationView { ExploreView() }
     case .upload:
-      CreateThreadView()
-      
+      Color.clear
     case .activity:
       ActivityView()
-      
     case .profile:
       ProfileView()
     }

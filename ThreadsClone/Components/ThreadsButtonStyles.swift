@@ -26,5 +26,22 @@ struct ThreadsPrimaryButtonStyle: ButtonStyle {
 }
 
 extension ButtonStyle where Self == ThreadsPrimaryButtonStyle {
-  static var threadsPrimary: ThreadsPrimaryButtonStyle { ThreadsPrimaryButtonStyle() }
+  static var threadsPrimary: Self { Self() }
+}
+
+struct ThreadsToolbarTextButtonStyle: ButtonStyle {
+  @Environment(\.isEnabled) private var isEnabled
+  
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .padding(.horizontal, 10)
+      .font(.subheadline.weight(.semibold))
+      .foregroundStyle(
+        isEnabled ? .black : .gray.opacity(0.5)
+      )
+  }
+}
+
+extension ButtonStyle where Self == ThreadsToolbarTextButtonStyle {
+  static var threadsToolbarText: Self { Self() }
 }
