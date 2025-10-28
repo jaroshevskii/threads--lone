@@ -1,5 +1,5 @@
 //
-//  ProfileViewModel.swift
+//  CurrentUserProfileViewModel.swift
 //  ThreadsClone
 //
 //  Created by Sasha Jaroshevskii on 10/28/25.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ProfileViewModel: ObservableObject {
+final class CurrentUserProfileViewModel: ObservableObject {
   @Published var currentUser: User?
   
   private var cancellables = Set<AnyCancellable>()

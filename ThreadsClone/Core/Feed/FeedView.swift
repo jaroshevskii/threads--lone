@@ -9,34 +9,34 @@ import SwiftUI
 
 struct FeedView: View {
   var body: some View {
-    ScrollView {
-      LazyVStack {
-        ForEach(0..<10, id: \.self) { thread in
-          ThreadCell()
+    NavigationStack {
+      ScrollView {
+        LazyVStack {
+          ForEach(0..<10, id: \.self) { thread in
+            ThreadCell()
+          }
         }
       }
-    }
-    .refreshable {
-      print("DEBUG: Refresh threads")
-    }
-    .scrollIndicators(.hidden)
-    .navigationTitle("Threads")
-    .navigationBarTitleDisplayMode(.inline)
-    .toolbar {
-      Button {
-        
-      } label: {
-        Image(systemName: "arrow.counterclockwise")
-          .foregroundStyle(.black)
+      .refreshable {
+        print("DEBUG: Refresh threads")
+      }
+      .scrollIndicators(.hidden)
+      .navigationTitle("Threads")
+      .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        Button {
+          
+        } label: {
+          Image(systemName: "arrow.counterclockwise")
+            .foregroundStyle(.black)
+        }
       }
     }
   }
 }
 
 #Preview {
-  NavigationView {
-    FeedView()
-  }
+  FeedView()
 }
 
 struct ThreadCell: View {

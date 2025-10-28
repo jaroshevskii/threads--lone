@@ -61,7 +61,7 @@ struct ThreadsTabView: View {
     case .activity:
       ActivityView()
     case .profile:
-      ProfileView()
+      CurrentUserProfileView()
     }
   }
 }

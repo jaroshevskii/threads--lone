@@ -45,3 +45,21 @@ struct ThreadsToolbarTextButtonStyle: ButtonStyle {
 extension ButtonStyle where Self == ThreadsToolbarTextButtonStyle {
   static var threadsToolbarText: Self { Self() }
 }
+
+struct ThreadsSecondaryButtonStyle: ButtonStyle {
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .font(.subheadline)
+      .padding()
+      .fontWeight(.semibold)
+      .frame(maxWidth: .infinity, maxHeight: 32)
+      .overlay {
+        RoundedRectangle(cornerRadius: 10)
+          .stroke(Color(.systemGray4), lineWidth: 1)
+      }
+  }
+}
+
+extension ButtonStyle where Self == ThreadsSecondaryButtonStyle {
+  static var threadsSecondary: Self { Self() }
+}
