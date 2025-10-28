@@ -26,6 +26,7 @@ struct RegistrationView: View {
         Group {
           TextField("Enter your email", text: $viewModel.email)
             .textInputAutocapitalization(.never)
+            .keyboardType(.emailAddress)
           
           SecureField("Enter your password", text: $viewModel.password)
           

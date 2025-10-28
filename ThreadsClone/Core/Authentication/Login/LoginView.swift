@@ -25,7 +25,7 @@ struct LoginView: View {
           Group {
             TextField("Enter your email", text: $viewModel.email)
               .keyboardType(.emailAddress)
-              .textInputAutocapitalization(.never)
+              .textInputAutocapitalization(.none)
               .autocorrectionDisabled()
             
             SecureField("Enter your password", text: $viewModel.password)
