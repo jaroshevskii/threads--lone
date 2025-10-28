@@ -1,6 +1,21 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "@" : {
+
+    },
+    "2 followers" : {
+
+    },
+    "10m" : {
+
+    },
+    "Activity" : {
+
+    },
+    "Add link..." : {
+
+    },
     "auth.login_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -44,6 +59,96 @@
           }
         }
       }
+    },
+    "Bio" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Chalres Leclerc" : {
+
+    },
+    "Done" : {
+
+    },
+    "Edit Profile" : {
+
+    },
+    "Enter you bio..." : {
+
+    },
+    "Enter your email" : {
+
+    },
+    "Enter your full name" : {
+
+    },
+    "Enter your password" : {
+
+    },
+    "Enter your username" : {
+
+    },
+    "Follow" : {
+
+    },
+    "Forgot password" : {
+
+    },
+    "Forgot password?" : {
+
+    },
+    "Formula 1 driver for Scoured Ferrari" : {
+
+    },
+    "Hello, world!" : {
+
+    },
+    "Link" : {
+
+    },
+    "Name" : {
+
+    },
+    "New Thread" : {
+
+    },
+    "Ninny Nyah" : {
+
+    },
+    "Post" : {
+
+    },
+    "Private profile" : {
+
+    },
+    "Search" : {
+
+    },
+    "Some Name" : {
+
+    },
+    "Some shit post message for all subscribes, lol" : {
+
+    },
+    "somename34" : {
+
+    },
+    "Start a thread..." : {
+
+    },
+    "Threads" : {
+
+    },
+    "unreleased43" : {
+
+    },
+    "username35" : {
+
+    },
+    "username343" : {
+
     }
   },
   "version" : "1.1"

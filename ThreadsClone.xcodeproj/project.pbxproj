@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1FE5202EB0DB2600EBE279 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FE51F2EB0DB2600EBE279 /* FirebaseAuth */; };
+		BB1FE5222EB0DB2600EBE279 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FE5212EB0DB2600EBE279 /* FirebaseFirestore */; };
+		BB1FE5242EB0DB2600EBE279 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FE5232EB0DB2600EBE279 /* FirebaseStorage */; };
 		BB64829F2EAFB90A0078F6C6 /* .editorconfig in Resources */ = {isa = PBXBuildFile; fileRef = BB64829E2EAFB90A0078F6C6 /* .editorconfig */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1FE5202EB0DB2600EBE279 /* FirebaseAuth in Frameworks */,
+				BB1FE5222EB0DB2600EBE279 /* FirebaseFirestore in Frameworks */,
+				BB1FE5242EB0DB2600EBE279 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,9 @@
 			);
 			name = ThreadsClone;
 			packageProductDependencies = (
+				BB1FE51F2EB0DB2600EBE279 /* FirebaseAuth */,
+				BB1FE5212EB0DB2600EBE279 /* FirebaseFirestore */,
+				BB1FE5232EB0DB2600EBE279 /* FirebaseStorage */,
 			);
 			productName = ThreadsClone;
 			productReference = BB64825E2EAFB5D10078F6C6 /* ThreadsClone.app */;
@@ -201,6 +210,9 @@
 			);
 			mainGroup = BB6482552EAFB5D10078F6C6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BB1FE51E2EB0DB2600EBE279 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BB64825F2EAFB5D10078F6C6 /* Products */;
 			projectDirPath = "";
@@ -404,6 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GAU36V85Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -436,6 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GAU36V85Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -581,6 +595,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB1FE51E2EB0DB2600EBE279 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB1FE51F2EB0DB2600EBE279 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB1FE51E2EB0DB2600EBE279 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BB1FE5212EB0DB2600EBE279 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB1FE51E2EB0DB2600EBE279 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BB1FE5232EB0DB2600EBE279 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB1FE51E2EB0DB2600EBE279 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB6482562EAFB5D10078F6C6 /* Project object */;
 }
