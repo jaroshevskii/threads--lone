@@ -18,73 +18,85 @@ struct ProfileView: View {
   }
   
   var body: some View {
-    ScrollView {
-      VStack(spacing: 20) {
-        HStack(alignment: .top) {
-          VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading) {
-              Text("Ninny Nyah")
-                .font(.title2)
-                .fontWeight(.semibold)
-              
-              Text("username343")
-            }
-            
-            Text("Formula 1 driver for Scoured Ferrari")
-              .font(.footnote)
-            
-            Text("2 followers")
-              .font(.caption)
-              .foregroundStyle(.gray)
-          }
-          
-          Spacer()
-          
-          CircularProfileImageView()
-        }
-        
-        Button("Follow") {
-          
-        }
-        .buttonStyle(.threadsPrimary)
-        
-        VStack {
-          HStack {
-            ForEach(ProfileThreadFilter.allCases) { filter in
-              VStack {
-                Text(filter.title)
-                  .font(.subheadline.weight(selectedFilter == filter ? .semibold : .regular))
+    NavigationStack {
+      ScrollView {
+        VStack(spacing: 20) {
+          HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 12) {
+              VStack(alignment: .leading) {
+                Text("Ninny Nyah")
+                  .font(.title2)
+                  .fontWeight(.semibold)
                 
-                if selectedFilter == filter {
-                  Rectangle()
-                    .foregroundStyle(.black)
-                    .frame(width: filterBarWidth, height: 1)
-                    .matchedGeometryEffect(id: "item", in: animation)
-                } else {
-                  Rectangle()
-                    .foregroundStyle(.clear)
-                    .frame(width: filterBarWidth, height: 1)
-                }
+                Text("username343")
               }
-              .onTapGesture {
-                withAnimation(.spring) {
-                  selectedFilter = filter
-                }
-              }
+              
+              Text("Formula 1 driver for Scoured Ferrari")
+                .font(.footnote)
+              
+              Text("2 followers")
+                .font(.caption)
+                .foregroundStyle(.gray)
             }
+            
+            Spacer()
+            
+            CircularProfileImageView()
           }
           
-          LazyVStack {
-            ForEach(0..<10, id: \.self) { thread in
-              ThreadCell()
+          Button("Follow") {
+            
+          }
+          .buttonStyle(.threadsPrimary)
+          
+          VStack {
+            HStack {
+              ForEach(ProfileThreadFilter.allCases) { filter in
+                VStack {
+                  Text(filter.title)
+                    .font(.subheadline.weight(selectedFilter == filter ? .semibold : .regular))
+                  
+                  if selectedFilter == filter {
+                    Rectangle()
+                      .foregroundStyle(.black)
+                      .frame(width: filterBarWidth, height: 1)
+                      .matchedGeometryEffect(id: "item", in: animation)
+                  } else {
+                    Rectangle()
+                      .foregroundStyle(.clear)
+                      .frame(width: filterBarWidth, height: 1)
+                  }
+                }
+                .onTapGesture {
+                  withAnimation(.spring) {
+                    selectedFilter = filter
+                  }
+                }
+              }
+            }
+            
+            LazyVStack {
+              ForEach(0..<10, id: \.self) { thread in
+                ThreadCell()
+              }
             }
           }
+          .padding(.vertical, 8)
         }
-        .padding(.vertical, 8)
+      }
+      .scrollIndicators(.hidden)
+      .padding(.horizontal)
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button {
+            AuthService.shared.signOut()
+          } label: {
+            Image(systemName: "line.3.horizontal")
+          }
+
+        }
       }
     }
-    .scrollIndicators(.hidden)
-    .padding(.horizontal)
   }
 }
 
