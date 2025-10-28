@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
   @StateObject var viewModel = CurrentUserProfileViewModel()
+  @State private var showsEditProfile = false
   
   // TODO: Refactor this stupid shit
   private var filterBarWidth: Double {
@@ -27,7 +28,7 @@ struct CurrentUserProfileView: View {
           ProfileHeaderView(user: currentUser)
 
           Button("Edit Profile") {
-            
+            showsEditProfile = true
           }
           .buttonStyle(.threadsSecondary)
           
@@ -36,6 +37,10 @@ struct CurrentUserProfileView: View {
       }
       .scrollIndicators(.hidden)
       .padding(.horizontal)
+      .sheet(isPresented: $showsEditProfile) {
+        EditProfileView()
+          .environmentObject(viewModel)
+      }
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           Button {
