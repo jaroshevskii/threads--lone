@@ -53,9 +53,9 @@ struct ThreadsTabView: View {
   private func tabContent(for tab: Tab) -> some View {
     switch tab {
     case .feed:
-      NavigationView { FeedView() }
+      FeedView()
     case .explore:
-      NavigationView { ExploreView() }
+      ExploreView()
     case .upload:
       Color.clear
     case .activity:

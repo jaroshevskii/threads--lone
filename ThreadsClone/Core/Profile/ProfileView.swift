@@ -37,7 +37,7 @@ struct ProfileView: View {
               }
               
               if let bio = currentUser?.bio {
-                Text("Formula 1 driver for Scoured Ferrari")
+                Text(bio)
                   .font(.footnote)
               }
 

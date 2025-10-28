@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import Combine
+
+@MainActor
+final class ExploreViewModel: ObservableObject {
+  @Published var users = [User]()
+  
+  func fetchUsers() async throws {
+    guard users.isEmpty else { return }
+    users = try await UserService.fetchUsers()
+  }
+}
