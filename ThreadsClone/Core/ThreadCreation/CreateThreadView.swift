@@ -17,7 +17,7 @@ struct CreateThreadView: View {
       VStack {
         VStack {
           HStack(alignment: .top) {
-            CircularProfileImageView()
+            CircularAvatarView(user: nil)
             
             VStack(alignment: .leading) {
               Text("somename34")
